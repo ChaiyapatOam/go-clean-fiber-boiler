@@ -1,0 +1,7 @@
+{
+	"name": "Go-Clean-Fiber-Boiler",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "root"
+}
