@@ -1,12 +1,13 @@
-# Golang Clean Architecture Bolilorplate
+# Golang Clean Architecture Boilerplate
 
 ## Built with 
 - Go
 - Fiber
 - MySQL
 - sqlx
+
 ## Run in Development
-Recommend run with devcontainer (extension is vscode)
+Recommend run with [devcontainer](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) (extension in vscode)
 
 ```bash
 go run .
