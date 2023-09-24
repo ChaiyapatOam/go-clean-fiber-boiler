@@ -1,13 +1,12 @@
 package db
 
 import (
-	"github.com/chaiyapatoam/go-clean-fiber-boiler/config"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 )
 
-func ConnectDB() (*sqlx.DB, error) {
-	db, err := sqlx.Connect("mysql", config.GetEnv("MYSQL_URI"))
+func ConnectDB(url string) (*sqlx.DB, error) {
+	db, err := sqlx.Connect("mysql", url)
 
 	if err != nil {
 		return nil, err
