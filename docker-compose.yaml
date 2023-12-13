@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    restart: on-failure
+
+  mysql:
+    image: mysql:8
+    ports:
+      - 5001:3306
+    volumes:
+      - ./volumes/mysql/:/var/lib/mysql/
+    env_file:
+      - .env
+    environment:
+      MYSQL_DATABASE: go-clean-fiber
+      MYSQL_ROOT_PASSWORD: $DB_PASS
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 5002:80
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
